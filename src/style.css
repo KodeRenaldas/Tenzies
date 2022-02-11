@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #0b2434;
+}
+#root {
+    min-height: 100vh;
+    padding: 2em;
+}
+#root, main, .die {
+    display: flex;
+}
+main, .roll_dice, .die {
+    border-radius: 10px;
+}
+main {
+    background-color: #f5f5f5;
+    flex: 1 1 auto;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.dice_container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 20px;
+}
+.die {
+    height: 5rem;
+    width: 5rem;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.die_num {
+    font-size: 2rem;
+}
+.roll_dice {
+    height: 4.5rem;
+    width: 10rem;
+    border: none;
+    background-color: #5035FF;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.roll_dice:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7)
+}
+.header {
+    text-align: center;
+}
+.header > h1 {
+    margin: 1em 0;
+}
+.header > p {
+    margin: 0 1em;
+}
+@media(max-width:560px) {
+    #root {
+        padding: 1em;
+    }
+    .dice_container {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1em 0;
+    }
+    .roll_dice {
+        margin: 0 0 1em 0;;
+    }
+}
